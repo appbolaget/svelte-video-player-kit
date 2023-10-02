@@ -8,11 +8,11 @@
   export let isFullscreen;
   export let isFullscreenEnabled;
 
-  isFullscreenEnabled = screenfull.isEnabled;
+  isFullscreenEnabled = screenfull && screenfull?.isEnabled;
   if (isFullscreenEnabled) screenfull.on("change", onChange);
 
   function onChange(e) {
-    if (element == e.target) isFullscreen = screenfull.isFullscreen;
+    if (element == e.target) isFullscreen = screenfull && screenfull?.isFullscreen;
   }
 
   $: {
