@@ -6,11 +6,11 @@
 
   export let element;
   export let isFullscreen;
-  export let isFullscreenEnabled;
+  export let isFullscreenEnabled = false;
 
-  if (browser) {
-    isFullscreenEnabled = screenfull && screenfull?.isEnabled;
-  }
+  // if (browser) {
+  //   isFullscreenEnabled = screenfull && screenfull?.isEnabled;
+  // }
 
   if (isFullscreenEnabled) screenfull.on("change", onChange);
 
