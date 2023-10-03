@@ -8,11 +8,7 @@
   export let isFullscreen;
   export let isFullscreenEnabled;
 
-  const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-
-  if (/iPhone/.test(userAgent) && !window.MSStream) {
-    isFullscreenEnabled = false;
-  } else {
+  if (browser) {
     isFullscreenEnabled = screenfull && screenfull?.isEnabled;
   }
 
