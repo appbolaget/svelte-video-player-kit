@@ -8,7 +8,7 @@
   export let isFullscreen;
   export let isFullscreenEnabled;
 
-  isFullscreenEnabled = screenfull && screenfull?.isEnabled;
+  isFullscreenEnabled = screenfull ? screenfull?.isEnabled : false;
   if (isFullscreenEnabled) screenfull.on("change", onChange);
 
   function onChange(e) {
